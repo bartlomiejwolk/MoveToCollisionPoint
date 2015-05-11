@@ -12,10 +12,23 @@ namespace OneDayGame {
         [SerializeField]
         private Transform targetTransform;
 
-        public void MoveToHitPoint(Vector3 hitPoint) {
+        public Transform TargetTransform {
+            get { return targetTransform; }
+            set { targetTransform = value; }
+        }
 
-                targetTransform.position = hitPoint
-                    + (hitPoint- targetTransform.position).normalized * offset;
+        /// Offset hit position forward/backward.
+        public float Offset {
+            get { return offset; }
+            set { offset = value; }
+        }
+
+        public void MoveToHitPoint(RaycastHit hitInfo) {
+            if (TargetTransform == null) return;
+
+                TargetTransform.position = hitInfo.point
+                    + (hitInfo.point - TargetTransform.position).normalized
+                    * Offset;
             }
         }
 }

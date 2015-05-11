@@ -15,7 +15,6 @@ public class MoveToPointEditor : Editor {
 	}
 
 	public override void OnInspectorGUI() {
-		base.OnInspectorGUI();
 		serializedObject.Update();
 
 		EditorGUILayout.PropertyField(targetTransform);
