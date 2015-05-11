@@ -7,7 +7,7 @@ namespace OneDayGame {
 
         /// Offset hit position forward/backward.
         [SerializeField]
-        private float _offset;
+        private float offset;
 
         [SerializeField]
         private Transform targetTransform;
@@ -15,7 +15,7 @@ namespace OneDayGame {
         public void MoveToHitPoint(Vector3 hitPoint) {
 
                 targetTransform.position = hitPoint
-                    + (hitPoint- targetTransform.position).normalized * _offset;
+                    + (hitPoint- targetTransform.position).normalized * offset;
             }
         }
 }
