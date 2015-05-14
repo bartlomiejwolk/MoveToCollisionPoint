@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace OneDayGame {
+namespace MoveToPoint {
 
     public class MoveToPoint : MonoBehaviour {
 

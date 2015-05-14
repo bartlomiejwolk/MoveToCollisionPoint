@@ -3,40 +3,44 @@ using System.Collections;
 using UnityEditor;
 using OneDayGame;
 
-[CustomEditor(typeof(MoveToPoint))]
-public class MoveToPointEditor : Editor {
+namespace MoveToPoint {
 
-    private SerializedProperty offset;
-    private SerializedProperty targetTransform;
+    [CustomEditor(typeof (MoveToPoint))]
+    public class MoveToPointEditor : Editor {
 
-    private void OnEnable() {
-        offset = serializedObject.FindProperty("offset");
-        targetTransform = serializedObject.FindProperty("targetTransform");
-    }
+        private SerializedProperty offset;
+        private SerializedProperty targetTransform;
 
-    public override void OnInspectorGUI() {
-        serializedObject.Update();
+        private void OnEnable() {
+            offset = serializedObject.FindProperty("offset");
+            targetTransform = serializedObject.FindProperty("targetTransform");
+        }
 
-        DrawTargetField();
-        DrawOffsetField();
+        public override void OnInspectorGUI() {
+            serializedObject.Update();
 
-        serializedObject.ApplyModifiedProperties();
-    }
+            DrawTargetField();
+            DrawOffsetField();
 
-    private void DrawOffsetField() {
-        EditorGUILayout.PropertyField(
-            offset,
-            new GUIContent(
-                "Offset",
-                "Offsets end position forward or backward."));
-    }
+            serializedObject.ApplyModifiedProperties();
+        }
 
-    private void DrawTargetField() {
-        EditorGUILayout.PropertyField(
-            targetTransform,
-            new GUIContent(
-                "Target",
-                "Transform to be moved."));
+        private void DrawOffsetField() {
+            EditorGUILayout.PropertyField(
+                offset,
+                new GUIContent(
+                    "Offset",
+                    "Offsets end position forward or backward."));
+        }
+
+        private void DrawTargetField() {
+            EditorGUILayout.PropertyField(
+                targetTransform,
+                new GUIContent(
+                    "Target",
+                    "Transform to be moved."));
+        }
+
     }
 
 }
