@@ -20,7 +20,7 @@ Nothing here.
 1. Clone repository into the *Assets* folder.
 2. Select game object in the hierarchy window and from the *Component* menu
    select *MoveToCollisionPoint* to add component to the selected game object.
-3. From other script or UnityEvent call *MoveToHitPoint()* to move specified
+3. From other script or UnityEvent call *MoveToHitPoint(RaycastHit)* to move specified
 transform to a raycast hit point.
 
 ## Help
