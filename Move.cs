@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace MoveToPoint {
 
@@ -7,21 +7,15 @@ namespace MoveToPoint {
 
         #region CONSTANTS
 
-        public const string Version = "v0.1.0";
         public const string Extension = "MoveToPoint";
+        public const string Version = "v0.1.0";
 
-        #endregion
-
-        #region INSPECTOR FIELDS
-        #endregion
+        #endregion CONSTANTS
 
         #region INSPECTOR FIELDS
+
         [SerializeField]
         private string description = "Description";
-
-        [SerializeField]
-        private Transform targetTransform;
-
 
         /// <summary>
         /// Offset hit position forward/backward.
@@ -29,12 +23,16 @@ namespace MoveToPoint {
         [SerializeField]
         private float offset;
 
-        #endregion
+        [SerializeField]
+        private Transform targetTransform;
+
+        #endregion INSPECTOR FIELDS
 
         #region PROPERTIES
-        public Transform TargetTransform {
-            get { return targetTransform; }
-            set { targetTransform = value; }
+
+        public string Description {
+            get { return description; }
+            set { description = value; }
         }
 
         /// <summary>
@@ -45,24 +43,24 @@ namespace MoveToPoint {
             set { offset = value; }
         }
 
-        public string Description {
-            get { return description; }
-            set { description = value; }
+        public Transform TargetTransform {
+            get { return targetTransform; }
+            set { targetTransform = value; }
         }
 
-        #endregion
+        #endregion PROPERTIES
 
         #region METHODS
 
         public void MoveToHitPoint(RaycastHit hitInfo) {
             if (TargetTransform == null) return;
 
-                TargetTransform.position = hitInfo.point
-                    + (hitInfo.point - TargetTransform.position).normalized
-                    * Offset;
+            TargetTransform.position = hitInfo.point
+                + (hitInfo.point - TargetTransform.position).normalized
+                * Offset;
         }
 
-        #endregion
+        #endregion METHODS
     }
 
 }

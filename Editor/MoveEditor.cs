@@ -1,28 +1,22 @@
-﻿using UnityEngine;
+﻿using OneDayGame;
 using System.Collections;
 using UnityEditor;
-using OneDayGame;
+using UnityEngine;
 
 namespace MoveToPoint {
 
-    [CustomEditor(typeof (Move))]
+    [CustomEditor(typeof(Move))]
     public class MoveEditor : Editor {
 
         #region SERIALIZER PROPERTIES
 
+        private SerializedProperty description;
         private SerializedProperty offset;
         private SerializedProperty targetTransform;
-        private SerializedProperty description;
 
-        #endregion
+        #endregion SERIALIZER PROPERTIES
 
         #region UNITY MESSAGES
-
-        private void OnEnable() {
-            offset = serializedObject.FindProperty("offset");
-            targetTransform = serializedObject.FindProperty("targetTransform");
-            description = serializedObject.FindProperty("description");
-        }
 
         public override void OnInspectorGUI() {
             serializedObject.Update();
@@ -38,9 +32,21 @@ namespace MoveToPoint {
             serializedObject.ApplyModifiedProperties();
         }
 
-        #endregion
+        private void OnEnable() {
+            offset = serializedObject.FindProperty("offset");
+            targetTransform = serializedObject.FindProperty("targetTransform");
+            description = serializedObject.FindProperty("description");
+        }
+
+        #endregion UNITY MESSAGES
 
         #region INSPECTOR CONTROLS
+
+        private void DrawDescriptionTextArea() {
+            description.stringValue = EditorGUILayout.TextArea(
+                description.stringValue);
+        }
+
         private void DrawOffsetField() {
             EditorGUILayout.PropertyField(
                 offset,
@@ -64,12 +70,8 @@ namespace MoveToPoint {
                     Move.Version,
                     Move.Extension));
         }
-        private void DrawDescriptionTextArea() {
-            description.stringValue = EditorGUILayout.TextArea(
-                description.stringValue);
-        }
 
-        #endregion
+        #endregion INSPECTOR CONTROLS
 
         #region METHODS
 
