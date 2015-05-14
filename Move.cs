@@ -11,7 +11,14 @@ namespace MoveToPoint {
         public const string Extension = "MoveToPoint";
 
         #endregion
-        
+
+        #region INSPECTOR FIELDS
+
+        [SerializeField]
+        private string description = "Description";
+
+        #endregion
+ 
         /// <summary>
         /// Offset hit position forward/backward.
         /// </summary>
@@ -32,6 +39,11 @@ namespace MoveToPoint {
         public float Offset {
             get { return offset; }
             set { offset = value; }
+        }
+
+        public string Description {
+            get { return description; }
+            set { description = value; }
         }
 
         public void MoveToHitPoint(RaycastHit hitInfo) {

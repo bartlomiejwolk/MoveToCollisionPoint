@@ -10,16 +10,22 @@ namespace MoveToPoint {
 
         private SerializedProperty offset;
         private SerializedProperty targetTransform;
+        private SerializedProperty description;
 
         private void OnEnable() {
             offset = serializedObject.FindProperty("offset");
             targetTransform = serializedObject.FindProperty("targetTransform");
+            description = serializedObject.FindProperty("description");
         }
 
         public override void OnInspectorGUI() {
             serializedObject.Update();
 
             DrawVersionLabel();
+            DrawDescriptionTextArea();
+
+            EditorGUILayout.Space();
+
             DrawTargetField();
             DrawOffsetField();
 
@@ -49,7 +55,20 @@ namespace MoveToPoint {
                     Move.Version,
                     Move.Extension));
         }
- 
+        private void DrawDescriptionTextArea() {
+            description.stringValue = EditorGUILayout.TextArea(
+                description.stringValue);
+        }
+        #region METHODS
+
+        [MenuItem("Component/MoveToPoint")]
+        private static void AddMyClassComponent() {
+            if (Selection.activeGameObject != null) {
+                Selection.activeGameObject.AddComponent(typeof(Move));
+            }
+        }
+
+        #endregion METHODS
     }
 
 }
