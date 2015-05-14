@@ -8,9 +8,15 @@ namespace MoveToPoint {
     [CustomEditor(typeof (Move))]
     public class MoveEditor : Editor {
 
+        #region SERIALIZER PROPERTIES
+
         private SerializedProperty offset;
         private SerializedProperty targetTransform;
         private SerializedProperty description;
+
+        #endregion
+
+        #region UNITY MESSAGES
 
         private void OnEnable() {
             offset = serializedObject.FindProperty("offset");
@@ -32,6 +38,9 @@ namespace MoveToPoint {
             serializedObject.ApplyModifiedProperties();
         }
 
+        #endregion
+
+        #region INSPECTOR CONTROLS
         private void DrawOffsetField() {
             EditorGUILayout.PropertyField(
                 offset,
@@ -59,6 +68,9 @@ namespace MoveToPoint {
             description.stringValue = EditorGUILayout.TextArea(
                 description.stringValue);
         }
+
+        #endregion
+
         #region METHODS
 
         [MenuItem("Component/MoveToPoint")]
