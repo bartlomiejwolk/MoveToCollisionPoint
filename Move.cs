@@ -13,21 +13,25 @@ namespace MoveToPoint {
         #endregion
 
         #region INSPECTOR FIELDS
+        #endregion
 
+        #region INSPECTOR FIELDS
         [SerializeField]
         private string description = "Description";
 
-        #endregion
- 
+        [SerializeField]
+        private Transform targetTransform;
+
+
         /// <summary>
         /// Offset hit position forward/backward.
         /// </summary>
         [SerializeField]
         private float offset;
 
-        [SerializeField]
-        private Transform targetTransform;
+        #endregion
 
+        #region PROPERTIES
         public Transform TargetTransform {
             get { return targetTransform; }
             set { targetTransform = value; }
@@ -46,12 +50,19 @@ namespace MoveToPoint {
             set { description = value; }
         }
 
+        #endregion
+
+        #region METHODS
+
         public void MoveToHitPoint(RaycastHit hitInfo) {
             if (TargetTransform == null) return;
 
                 TargetTransform.position = hitInfo.point
                     + (hitInfo.point - TargetTransform.position).normalized
                     * Offset;
-            }
         }
+
+        #endregion
+    }
+
 }
