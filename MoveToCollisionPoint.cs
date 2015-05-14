@@ -7,7 +7,7 @@ namespace MoveToCollisionPointEx {
 
         #region CONSTANTS
 
-        public const string Extension = "MoveToPoint";
+        public const string Extension = "MoveToCollisionPoint";
         public const string Version = "v0.1.0";
 
         #endregion CONSTANTS
