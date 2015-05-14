@@ -5,7 +5,7 @@ using OneDayGame;
 
 namespace MoveToPoint {
 
-    [CustomEditor(typeof (MoveToPoint))]
+    [CustomEditor(typeof (Move))]
     public class MoveToPointEditor : Editor {
 
         private SerializedProperty offset;
@@ -46,8 +46,8 @@ namespace MoveToPoint {
             EditorGUILayout.LabelField(
                 string.Format(
                     "{0} ({1})",
-                    MoveToPoint.Version,
-                    MoveToPoint.Extension));
+                    Move.Version,
+                    Move.Extension));
         }
  
     }

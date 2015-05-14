@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace MoveToPoint {
 
-    public class MoveToPoint : MonoBehaviour {
+    public class Move : MonoBehaviour {
 
         #region CONSTANTS
 
