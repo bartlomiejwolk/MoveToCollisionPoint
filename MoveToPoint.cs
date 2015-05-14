@@ -5,7 +5,9 @@ namespace OneDayGame {
 
     public class MoveToPoint : MonoBehaviour {
 
+        /// <summary>
         /// Offset hit position forward/backward.
+        /// </summary>
         [SerializeField]
         private float offset;
 
@@ -17,7 +19,9 @@ namespace OneDayGame {
             set { targetTransform = value; }
         }
 
+        /// <summary>
         /// Offset hit position forward/backward.
+        /// </summary>
         public float Offset {
             get { return offset; }
             set { offset = value; }

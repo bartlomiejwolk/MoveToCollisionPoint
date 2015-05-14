@@ -17,8 +17,17 @@ public class MoveToPointEditor : Editor {
 	public override void OnInspectorGUI() {
 		serializedObject.Update();
 
-		EditorGUILayout.PropertyField(targetTransform);
-		EditorGUILayout.PropertyField(offset);
+		EditorGUILayout.PropertyField(
+            targetTransform,
+            new GUIContent(
+                "Target",
+                "Transform to be moved."));
+
+		EditorGUILayout.PropertyField(
+            offset,
+            new GUIContent(
+                "Offset",
+                "Offsets end position forward or backward."));
 
 		serializedObject.ApplyModifiedProperties();
 	}
