@@ -5,8 +5,8 @@ using UnityEngine;
 
 namespace MoveToCollisionPointEx {
 
-    [CustomEditor(typeof(Move))]
-    public class MoveEditor : Editor {
+    [CustomEditor(typeof(MoveToCollisionPoint))]
+    public class MoveToCollisionPointEditor : Editor {
 
         #region SERIALIZER PROPERTIES
 
@@ -67,8 +67,8 @@ namespace MoveToCollisionPointEx {
             EditorGUILayout.LabelField(
                 string.Format(
                     "{0} ({1})",
-                    Move.Version,
-                    Move.Extension));
+                    MoveToCollisionPoint.Version,
+                    MoveToCollisionPoint.Extension));
         }
 
         #endregion INSPECTOR CONTROLS
@@ -78,7 +78,7 @@ namespace MoveToCollisionPointEx {
         [MenuItem("Component/MoveToPoint")]
         private static void AddMyClassComponent() {
             if (Selection.activeGameObject != null) {
-                Selection.activeGameObject.AddComponent(typeof(Move));
+                Selection.activeGameObject.AddComponent(typeof(MoveToCollisionPoint));
             }
         }
 

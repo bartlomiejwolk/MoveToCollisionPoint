@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MoveToCollisionPointEx {
 
-    public class Move : MonoBehaviour {
+    public class MoveToCollisionPoint : MonoBehaviour {
 
         #region CONSTANTS
 
