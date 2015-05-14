@@ -19,6 +19,7 @@ namespace MoveToPoint {
         public override void OnInspectorGUI() {
             serializedObject.Update();
 
+            DrawVersionLabel();
             DrawTargetField();
             DrawOffsetField();
 
@@ -41,6 +42,14 @@ namespace MoveToPoint {
                     "Transform to be moved."));
         }
 
+        private void DrawVersionLabel() {
+            EditorGUILayout.LabelField(
+                string.Format(
+                    "{0} ({1})",
+                    MoveToPoint.Version,
+                    MoveToPoint.Extension));
+        }
+ 
     }
 
 }
