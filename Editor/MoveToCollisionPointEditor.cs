@@ -75,7 +75,7 @@ namespace MoveToCollisionPointEx {
 
         #region METHODS
 
-        [MenuItem("Component/MoveToPoint")]
+        [MenuItem("Component/MoveToCollisionPoint")]
         private static void AddMyClassComponent() {
             if (Selection.activeGameObject != null) {
                 Selection.activeGameObject.AddComponent(typeof(MoveToCollisionPoint));
