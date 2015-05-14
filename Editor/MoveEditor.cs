@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEditor;
 using UnityEngine;
 
-namespace MoveToPoint {
+namespace MoveToCollisionPointEx {
 
     [CustomEditor(typeof(Move))]
     public class MoveEditor : Editor {

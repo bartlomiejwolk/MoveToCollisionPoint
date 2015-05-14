@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace MoveToPoint {
+namespace MoveToCollisionPointEx {
 
     public class Move : MonoBehaviour {
 
