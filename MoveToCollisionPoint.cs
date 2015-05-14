@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace MoveToPoint {
+namespace MoveToCollisionPointEx {
 
-    public class Move : MonoBehaviour {
+    public class MoveToCollisionPoint : MonoBehaviour {
 
         #region CONSTANTS
 
-        public const string Extension = "MoveToPoint";
-        public const string Version = "v0.1.0";
+        public const string Extension = "MoveToCollisionPoint";
+        public const string Version = "v0.1.1";
 
         #endregion CONSTANTS
 

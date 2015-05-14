@@ -3,10 +3,10 @@ using System.Collections;
 using UnityEditor;
 using UnityEngine;
 
-namespace MoveToPoint {
+namespace MoveToCollisionPointEx {
 
-    [CustomEditor(typeof(Move))]
-    public class MoveEditor : Editor {
+    [CustomEditor(typeof(MoveToCollisionPoint))]
+    public class MoveToCollisionPointEditor : Editor {
 
         #region SERIALIZER PROPERTIES
 
@@ -67,18 +67,18 @@ namespace MoveToPoint {
             EditorGUILayout.LabelField(
                 string.Format(
                     "{0} ({1})",
-                    Move.Version,
-                    Move.Extension));
+                    MoveToCollisionPoint.Version,
+                    MoveToCollisionPoint.Extension));
         }
 
         #endregion INSPECTOR CONTROLS
 
         #region METHODS
 
-        [MenuItem("Component/MoveToPoint")]
+        [MenuItem("Component/MoveToCollisionPoint")]
         private static void AddMyClassComponent() {
             if (Selection.activeGameObject != null) {
-                Selection.activeGameObject.AddComponent(typeof(Move));
+                Selection.activeGameObject.AddComponent(typeof(MoveToCollisionPoint));
             }
         }
 

@@ -1,11 +1,11 @@
-﻿# ExtensionName
+﻿# MoveToCollisionPoint
 
-*MoveToPoint* extension for Unity. Use it to move specified transform to
-a specified point.
+*MoveToCollisionPoint* extension for Unity. Use it to move specified transform to
+a specified collision point.
 
 Licensed under MIT license. See LICENSE file in the project root folder.
 
-![MoveToPoint](/Resources/cover_screenshot.png?raw=true)
+![MoveToCollisionPoint](/Resources/cover_screenshot.png?raw=true)
 
 ## Features
 
@@ -19,7 +19,7 @@ Nothing here.
 
 1. Clone repository into the *Assets* folder.
 2. Select game object in the hierarchy window and from the *Component* menu
-   select *MoveToPoint* to add component to the selected game object.
+   select *MoveToCollisionPoint* to add component to the selected game object.
 3. From other script or UnityEvent call *MoveToHitPoint()* to move specified
 transform to a raycast hit point.
 
