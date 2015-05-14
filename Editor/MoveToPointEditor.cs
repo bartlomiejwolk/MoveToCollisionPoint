@@ -6,29 +6,29 @@ using OneDayGame;
 [CustomEditor(typeof(MoveToPoint))]
 public class MoveToPointEditor : Editor {
 
-	private SerializedProperty offset;
-	private SerializedProperty targetTransform;
+    private SerializedProperty offset;
+    private SerializedProperty targetTransform;
 
-	private void OnEnable() {
-		offset = serializedObject.FindProperty("offset");
-		targetTransform = serializedObject.FindProperty("targetTransform");
-	}
+    private void OnEnable() {
+        offset = serializedObject.FindProperty("offset");
+        targetTransform = serializedObject.FindProperty("targetTransform");
+    }
 
-	public override void OnInspectorGUI() {
-		serializedObject.Update();
+    public override void OnInspectorGUI() {
+        serializedObject.Update();
 
-		EditorGUILayout.PropertyField(
+        EditorGUILayout.PropertyField(
             targetTransform,
             new GUIContent(
                 "Target",
                 "Transform to be moved."));
 
-		EditorGUILayout.PropertyField(
+        EditorGUILayout.PropertyField(
             offset,
             new GUIContent(
                 "Offset",
                 "Offsets end position forward or backward."));
 
-		serializedObject.ApplyModifiedProperties();
-	}
+        serializedObject.ApplyModifiedProperties();
+    }
 }
