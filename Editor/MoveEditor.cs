@@ -6,7 +6,7 @@ using OneDayGame;
 namespace MoveToPoint {
 
     [CustomEditor(typeof (Move))]
-    public class MoveToPointEditor : Editor {
+    public class MoveEditor : Editor {
 
         private SerializedProperty offset;
         private SerializedProperty targetTransform;
